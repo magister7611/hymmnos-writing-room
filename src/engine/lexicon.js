@@ -44,7 +44,7 @@ export function verbChoice(lemma,{scope,style,personObject=false}){
   const word=scope==='central'?'yanwe':style==='poetic'&&personObject?'melenas':'hartes';
   const entry=dictionary.find(e=>e.word===word&&inScope(e,scope));
   if(entry)approximations.push(word==='yanwe'?'‘좋아하다’를 ‘소중히 대하다’로 가까이 표현했습니다.':word==='melenas'?'‘좋아하다’를 melenas(매우 깊이 사랑하다)로 표현해 감정을 더 강하게 담았습니다.':'‘좋아하다’를 hartes(사랑하다)로 표현해 감정의 강도가 달라집니다.');
-  return {entry,approximations,lemma:word==='yanwe'?'소중히 대하다':'사랑하다'};
+  return {entry,approximations,lemma:word==='yanwe'?'소중히 대하다':word==='melenas'?'깊이 사랑하다':'사랑하다'};
  }
  if(lemma==='사랑하'&&scope==='central'&&style==='poetic'){
   approximations.push('중앙정순률의 직접 사랑 동사 대신 yanwe(소중히 대하다)로 의역했습니다. 같은 뜻은 아닙니다.');

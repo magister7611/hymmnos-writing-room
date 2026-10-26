@@ -31,7 +31,7 @@ test('desire is compositional for protection and walking, not only the original 
 });
 test('poetic presence is an explicit fragment with contextual desire, not a reversed actor',()=>{
  const r=generate('좋아해요, 당신을... 언제까지나 당신의 곁에 있고 싶어요.',{style:'poetic'});
- assert.ok(r.lines[0].text.includes('melenas yor'));assert.equal(r.lines[1].text,'yanje pitod yor...');assert.equal(r.lines[1].syntax,'fragment');assert.ok(r.lines[1].contextMeaning.includes('나는'));assert.ok(r.lines[1].approximations.some(s=>s.includes('생략')));assert.equal(r.lines[1].structure.actor,'speaker');
+ assert.ok(r.lines[0].text.includes('melenas yor'));assert.ok(r.lines[0].meaning.includes('깊이 사랑'));assert.equal(r.lines[1].text,'yanje pitod yor...');assert.equal(r.lines[1].syntax,'fragment');assert.ok(r.lines[1].contextMeaning.includes('나는'));assert.ok(r.lines[1].approximations.some(s=>s.includes('생략')));assert.equal(r.lines[1].structure.actor,'speaker');assert.ok(!r.lines[1].usedIds.includes('irs:1'));assert.ok(!r.lines[1].usedIds.includes('wearequewie:5'));
 });
 test('central scope can explain care-for and together paraphrases without leaked dialects',()=>{
  const care=line('나는 너를 사랑해.',{scope:'central',style:'poetic'});assert.ok(care.text.includes('yanwe yor'));assert.ok(care.approximations.length);

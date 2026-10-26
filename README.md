@@ -2,6 +2,8 @@
 
 브라우저 안에서 휴므노스 문장과 노랫말을 만드는 비공식 팬 창작 도구입니다. HTML·CSS·JavaScript와 정적 분석기 파일만 배포하며 Python/Node 서버 및 GPT API 호출 없이 실행합니다.
 
+[작업실 열기](https://magister7611.github.io/hymmnos-writing-room/)
+
 ## 사용
 
 한국어 문장을 입력하고 감정구, 본문 어휘 범위, 표현 방식을 선택하세요.

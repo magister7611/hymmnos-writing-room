@@ -143,7 +143,7 @@ export function generateLocal(options,analyze){
   const text=result.held||meaningfulIssues.length?'':join(prefix,result.words)+(result.suffix||'.');
   const checked=inspectHymmnos(text,options.scope);
   if(checked.unknown.length)throw new Error('생성된 어휘의 사전 범위를 확인하지 못했습니다.');
-  const usedIds=unique([...c.ids,...checked.entries.map(e=>e.id)]);
+  const usedIds=unique(text?checked.entries.map(e=>e.id):c.ids);
   return {original,text,meaning:result.meaning||'뜻의 관계를 확정하지 못했습니다.',contextMeaning:result.contextMeaning||'',syntax:result.syntax||'sentence',usedIds,unresolved:unique(c.unresolved),approximations:unique(c.approximations),notes:unique(c.notes),structure:frameSummary(frame)};
  });
  return {lines,engine:'dictionary',model:'브라우저 문장 엔진',createdAt:new Date().toISOString(),input:options.text,prefix:lockedPrefix,emotionScope:options.emotionScope||'each',format:options.format,elapsedMs:Math.round(performance.now()-start),notes:['한국어 형태소 분석과 문장 관계 규칙으로 만든 초안입니다. 입력 문장은 기기 밖으로 전송하지 않습니다.','표준계열 사전의 등재 어휘만 사용합니다. 문법·관용 표현의 자연성에는 검토가 필요합니다.','시제·의지·수식의 정밀도가 부족한 부분과 뜻을 바꾼 부분을 구분해 표시합니다.']};
